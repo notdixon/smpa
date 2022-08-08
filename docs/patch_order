@@ -1,0 +1,42 @@
+SMPA - 'patch_order' File
+-------------------------
+
++------------------------------------+
+| Contents                           |
++------------------------------------+
+| 1. What is the 'patch_order' file? |
++------------------------------------+
+
++------------------------------------+
+| 1. What is the 'patch_order' file? |
++------------------------------------+
+ The way that SMPA figures out the order to apply patches is actually via a
+ simple, plain text file called 'patch_order'. This file goes in the same
+ directory as the patches that you wish to be applied.
+
+ +--- Example 'patches' Directory Tree ----------------------------------------+
+ |                                                                             |
+ | patches/                                                                    |
+ |   |---- patch1.diff                                                         |
+ |   |---- patch2.diff                                                         |
+ |   |---- patch3.patch                                                        |
+ |   |---- patch4.patch                                                        |
+ |   |---- patch_order                                                         |
+ |                                                                             |
+ +-----------------------------------------------------------------------------+
+ 
+ The 'patch_order' file is simply just a file containing the file names of the
+ patches, in the order they should be applied.
+
+
+ +--- Example 'patch_order' File ----------------------------------------------+
+ | patch1.diff                                                                 |
+ | patch2.diff                                                                 |
+ | patch3.patch                                                                |
+ | patch4.patch                                                                |
+ +-----------------------------------------------------------------------------+
+
+ Now, let's say that patch4 was actually misnamed, and was meant to be
+ 'patch2.1', and meant to be before 'patch3'. Well, as this is plain text, we
+ can simply open it up in a text editor, such as Vim, and move it.
+

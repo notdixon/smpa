@@ -1,0 +1,80 @@
+Simple Multi Patch Applier
+--------------------------
+
+The Simple Multi Patch Applier is a program that allows you to apply patches to
+programs in bulk, in a set order - making patches (and bugs from patches)
+reproducable.
+
+ +----------------------+
+ | Contents             |
+ +----------------------+
+ |  1. Building         |
+ |  2. Usage            |
+ |  3. License          |
+ +----------------------+
+
++-------------+
+| 1. Building |
++-------------+
+ To build SMPA, you simply need to have a C++ compiler and Make installed on
+ your system, these are available in (hopefully) all Linux distributions.
+
+  +--- Arch Based Systems -----+ +--- Debian Based Systems ------+
+  |  # pacman -Syu base-devel  | | # apt install build-essential |
+  +----------------------------+ +-------------------------------+
+  
+  +--- Fedora Linux -----------+ +--- SUSE Distributions --------+
+  | # dnf install make gcc-c++ | | # zypper install make gcc-c++ |
+  +----------------------------+ +-------------------------------+
+
+ And you should have 'git' installed, the package name is the same on every
+ distribution.
+
+ Then you can simply clone the repository, and run 'make', like so:
+
+   +--- Terminal ----------------------------------------------------------------+
+   | $ git clone https://github.com/notdixon/smpa.git                            |
+   | $ cd smpa                                                                   |
+   | $ make                                                                      |
+   +-----------------------------------------------------------------------------+
+
+ If you want to install it (or uninstall it) run one of the following
+   
+   +--- Terminal ----------------------------------------------------------------+
+   | # make install                                                              |
+   | # make uninstall                                                            |
+   +-----------------------------------------------------------------------------+
+
++----------+
+| 2. Usage |
++----------+
+ Using SMPA is pretty simple - simply run 'smpa' with no flags, and it will tell
+ you that you can run '--help' to see them.
+
+ To apply patches from a directory, you can use the flag `--directory', like so:
+   
+   +--- Terminal ----------------------------------------------------------------+
+   | $ smpa --directory patches/                                                 |
+   +-----------------------------------------------------------------------------+
+
+ Please note, that you must have a 'patch_order' file in this directory. See
+ 'docs/patch_order' for more information.
+
++------------+
+| 3. License |
++------------+
+
+Copyright (C) 2022   notdixon <notdixon.alix@gmail.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
